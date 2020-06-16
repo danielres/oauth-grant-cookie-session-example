@@ -7,10 +7,12 @@
   "private": true,
   "scripts": {
     "watch": "yarn api watch",
-    "api": "env-cmd yarn workspace api run"
+    "api": "env-cmd yarn workspace api run",
+    "ui": "env-cmd yarn workspace ui run"
   },
   "workspaces": [
-    "api"
+    "api",
+    "ui"
   ],
   "devDependencies": {
     "env-cmd": "^10.1.0"
