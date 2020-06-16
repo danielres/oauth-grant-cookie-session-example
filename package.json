@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "watch": "yarn api watch",
+    "watch": "run-p 'api watch' 'ui watch'",
     "api": "env-cmd yarn workspace api run",
     "ui": "env-cmd yarn workspace ui run"
   },
@@ -15,6 +15,7 @@
     "ui"
   ],
   "devDependencies": {
-    "env-cmd": "^10.1.0"
+    "env-cmd": "^10.1.0",
+    "npm-run-all": "^4.1.5"
   }
 }
