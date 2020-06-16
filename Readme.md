@@ -44,4 +44,4 @@ module.exports = env;
 
 In a terminal:
 
-`yarn dev`
+`yarn watch`

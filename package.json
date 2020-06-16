@@ -4,22 +4,15 @@
   "main": "index.js",
   "author": "Daniel Reszka <dannn.r@gmail.com>",
   "license": "MIT",
+  "private": true,
   "scripts": {
-    "dev": "env-cmd tsnd ./src"
+    "watch": "yarn api watch",
+    "api": "env-cmd yarn workspace api run"
   },
-  "dependencies": {
-    "cookie-session": "^1.4.0",
-    "express": "^4.17.1",
-    "grant": "^5.2.0"
-  },
+  "workspaces": [
+    "api"
+  ],
   "devDependencies": {
-    "@danielres/validate-config": "^0.0.11",
-    "@types/cookie-session": "^2.0.40",
-    "@types/express": "^4.17.6",
-    "@types/node": "^14.0.13",
-    "env-cmd": "^10.1.0",
-    "nodemon": "^2.0.4",
-    "ts-node-dev": "^1.0.0-pre.49",
-    "typescript": "^3.9.5"
+    "env-cmd": "^10.1.0"
   }
 }
