@@ -45,3 +45,7 @@ module.exports = env;
 In a terminal:
 
 `yarn watch`
+
+## Preview
+
+![Preview](https://raw.githubusercontent.com/danielres/oauth-grant-cookie-session-example/gh-pages/assets/flow.gif)
