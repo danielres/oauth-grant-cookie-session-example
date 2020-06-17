@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { Middleware } from "../../../typings";
+import { Middleware } from "../../../interfaces";
 
 export default (routes: string[]) => (middleware: Middleware) => (
   req: Request,
