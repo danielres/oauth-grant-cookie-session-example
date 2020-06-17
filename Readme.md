@@ -1,4 +1,4 @@
-# OAuth example using grant.js and cookie sessions
+# OAuth example using grant.js and cookie-session
 
 ## Prerequisites
 
