@@ -1,5 +1,5 @@
 {
-  "name": "grant-example",
+  "name": "oauth-grant-cookie-session-example",
   "version": "1.0.0",
   "author": "Daniel Reszka <dannn.r@gmail.com>",
   "license": "MIT",
