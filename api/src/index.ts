@@ -1,35 +1,36 @@
 import express, { Express } from "express";
 import config from "./config";
-import cookieSession from "./middleware/cookieSession";
-import ensureAuthenticated from "./middleware/ensureAuthenticated";
-import grant from "./middleware/grant";
-import handleOAuthResponse from "./middleware/handleOAuthResponse";
-import unlessRouteIn from "./middleware/utils/unlessRouteIn";
+import middlewares from "./middlewares";
+import Layout from "./templates/Layout";
+import SessionInfo from "./templates/SessionInfo";
 
-const { PUBLIC_ROUTES, PORT } = config;
+const { PORT } = config;
 
 const app: Express = express();
 
-app.use(
-  cookieSession,
-  grant,
-  handleOAuthResponse,
-  unlessRouteIn(PUBLIC_ROUTES)(ensureAuthenticated)
-);
+app.use(...middlewares);
 
 app.get("/", (req, res) => {
-  const user = req.session?.user;
-  res.send(`home | grant: ${JSON.stringify({ user, session: req.session })}`);
+  res.send(Layout("Home", `Hello world!`, req.session));
 });
 
-app.get("/private", (req, res) => {
-  const user = req.session?.user;
-  res.send(`private | grant: ${JSON.stringify({ user })}`);
+app.get("/login", (req, res) => {
+  res.send(
+    Layout(
+      "Login",
+      `<a href="/connect/google">Continue with Google</a>`,
+      req.session
+    )
+  );
 });
 
 app.get("/logout", (req, res) => {
   req.session = null;
   res.redirect("/");
+});
+
+app.get("/profile", (req, res) => {
+  res.send(Layout("Profile", SessionInfo(req.session), req.session));
 });
 
 app.listen(PORT, () => {

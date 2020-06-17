@@ -6,7 +6,7 @@ const SECURE = env.SECURE !== "false";
 
 const config = {
   PORT: [env.PORT_API, "port"],
-  PUBLIC_ROUTES: [["/"], "array"],
+  PUBLIC_ROUTES: [["/", "/login", "/logout"], "array"],
   SECURE: [SECURE, "boolean"],
 
   auth: {
