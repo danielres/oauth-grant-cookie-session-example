@@ -1,7 +1,6 @@
 {
   "name": "grant-example",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "Daniel Reszka <dannn.r@gmail.com>",
   "license": "MIT",
   "private": true,
@@ -11,6 +10,16 @@
   },
   "workspaces": [
     "api"
+  ],
+  "keywords": [
+    "OAuth",
+    "OAuth2",
+    "express",
+    "grant",
+    "grant.js",
+    "authentication",
+    "example",
+    "node"
   ],
   "devDependencies": {
     "env-cmd": "^10.1.0",
